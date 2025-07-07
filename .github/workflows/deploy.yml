@@ -25,6 +25,7 @@ jobs:
       # 步骤 4：执行部署（生产环境）
       - name: Deploy to Vercel
         run: |
-          vercel --prod --confirm --token=${{ secrets.VERCEL_TOKEN }}
+          vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}  # 关联 Vercel 项目
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}  # 关键修复
